@@ -1,3 +1,9 @@
+/**
+ * Rene Sequeira
+ * Module 3 Assignment
+ * User Interface with menu option
+ */
+
 package application;
 import javax.swing.JOptionPane;
 	
@@ -20,7 +26,7 @@ import javafx.scene.layout.*;
 
 
 public class Main extends Application {
-	//private CornerRadii CornerRaddi;
+	
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -39,7 +45,7 @@ public class Main extends Application {
 			DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MMMM dd, yyyy hh:mm a");
 			String formatDate = currentDate.format(dateFormat);
 			Random rand = new Random();
-			//double randGreen = 90 + rand.nextInt(61);
+			
 			date.setOnAction(e -> JOptionPane.showMessageDialog(null, formatDate));
 			content.setOnAction(e -> {JOptionPane.showMessageDialog(null, "Adding the following content to file:  "+ textBox.getText());
 					try {
@@ -53,7 +59,7 @@ public class Main extends Application {
 					}
 			
 			});
-			//Color hueGreen = Color.hsb(randGreen, .9, .9);
+			
 			color.setOnAction(e ->{
 				double randGreen = 90 + rand.nextInt(61);
 				Color hueGreen = Color.hsb(randGreen, .5, 1.0);
