@@ -46,21 +46,21 @@ public class Main extends Application {
 			String formatDate = currentDate.format(dateFormat);
 			TextField dateText = new TextField();
 			Random rand = new Random();
-			
+		
 			date.setOnAction(e ->{
 				dateText.appendText(formatDate);
-				JOptionPane.showMessageDialog(null, dateText.getText());
+				
+				//JOptionPane.showMessageDialog(null, dateText.getText());
 			});
 			
 			content.setOnAction(e -> {JOptionPane.showMessageDialog(null, "Adding the following content to file:  ");
 					try {
-						//String textContent = "";
-						//TextField dateText = new TextField(formatDate);
+						
 						PrintWriter file = new PrintWriter("C:\\Users\\renej\\eclipse-workspace\\UserInterface\\src\\log.txt");
 						file.println(dateText.getText());
 						file.close();
 					} catch (FileNotFoundException e1) {
-						// TODO Auto-generated catch block
+					
 						e1.printStackTrace();
 					}
 			
@@ -78,7 +78,7 @@ public class Main extends Application {
 			menu.getMenus().add(menuName);
 			
 			root.setTop(menu);
-			root.getChildren().add(dateText);
+			root.setBottom(dateText);
 			primaryStage.setScene(new Scene(root,200,200));
 			primaryStage.show();
 		} catch(Exception e) {
