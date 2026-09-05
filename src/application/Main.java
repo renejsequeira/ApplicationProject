@@ -32,8 +32,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			BorderPane root = new BorderPane();
-			TextField textBox = new TextField(" Module three Assignment.\n"
-					+ " Creating a user interface with an option menu.");
+			//TextField textBox = new TextField(" Module three Assignment.\n"
+			//		+ " Creating a user interface with an option menu.");
 			MenuBar menu = new MenuBar();
 			Menu menuName = new Menu("Options");
 			
@@ -44,14 +44,20 @@ public class Main extends Application {
 			LocalDateTime currentDate = LocalDateTime.now();
 			DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MMMM dd, yyyy hh:mm a");
 			String formatDate = currentDate.format(dateFormat);
+			TextField dateText = new TextField();
 			Random rand = new Random();
 			
-			date.setOnAction(e -> JOptionPane.showMessageDialog(null, formatDate));
-			content.setOnAction(e -> {JOptionPane.showMessageDialog(null, "Adding the following content to file:  "+ textBox.getText());
+			date.setOnAction(e ->{
+				dateText.appendText(formatDate);
+				JOptionPane.showMessageDialog(null, dateText.getText());
+			});
+			
+			content.setOnAction(e -> {JOptionPane.showMessageDialog(null, "Adding the following content to file:  ");
 					try {
 						//String textContent = "";
+						//TextField dateText = new TextField(formatDate);
 						PrintWriter file = new PrintWriter("C:\\Users\\renej\\eclipse-workspace\\UserInterface\\src\\log.txt");
-						file.println(textBox.getText());
+						file.println(dateText.getText());
 						file.close();
 					} catch (FileNotFoundException e1) {
 						// TODO Auto-generated catch block
@@ -72,7 +78,7 @@ public class Main extends Application {
 			menu.getMenus().add(menuName);
 			
 			root.setTop(menu);
-			root.getChildren().add(textBox);
+			root.getChildren().add(dateText);
 			primaryStage.setScene(new Scene(root,200,200));
 			primaryStage.show();
 		} catch(Exception e) {
