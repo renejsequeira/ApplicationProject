@@ -50,7 +50,7 @@ public class Main extends Application {
 			content.setOnAction(e -> {JOptionPane.showMessageDialog(null, "Adding the following content to file:  ");
 					try {
 						
-						PrintWriter file = new PrintWriter("C:\\Users\\renej\\eclipse-workspace\\UserInterface\\src\\log.txt");
+						PrintWriter file = new PrintWriter("C:\\Users\\renej\\eclipse-workspace\\ApplicationProject\\src\\application\\log.txt");
 						file.println(dateText.getText());
 						file.close();
 					} catch (FileNotFoundException e1) {
