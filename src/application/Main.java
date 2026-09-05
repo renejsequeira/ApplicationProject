@@ -26,17 +26,13 @@ import javafx.scene.layout.*;
 
 
 public class Main extends Application {
-	
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			BorderPane root = new BorderPane();
-			//TextField textBox = new TextField(" Module three Assignment.\n"
-			//		+ " Creating a user interface with an option menu.");
 			MenuBar menu = new MenuBar();
-			Menu menuName = new Menu("Options");
-			
+			Menu menuName = new Menu("Options");	
 			MenuItem date = new MenuItem("Date and Time");
 			MenuItem content = new MenuItem("Text Content");
 			MenuItem color = new MenuItem("Colors");
@@ -49,8 +45,6 @@ public class Main extends Application {
 		
 			date.setOnAction(e ->{
 				dateText.appendText(formatDate);
-				
-				//JOptionPane.showMessageDialog(null, dateText.getText());
 			});
 			
 			content.setOnAction(e -> {JOptionPane.showMessageDialog(null, "Adding the following content to file:  ");
